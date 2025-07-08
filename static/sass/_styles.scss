@@ -243,6 +243,7 @@ label {
 
 .navbar {
   padding: 5px 0px;
+  display: none;
   &.navbar-header {
     height: 85px;
   }
@@ -294,6 +295,7 @@ label {
   height: $footer-height;
   position: absolute;
   width: 100%;
+  display: none;
 
   .logo {
     img {
