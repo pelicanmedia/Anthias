@@ -7,11 +7,11 @@ set -euo pipefail
 
 BRANCH="master"
 ANSIBLE_PLAYBOOK_ARGS=()
-REPOSITORY="https://github.com/Screenly/Anthias.git"
+REPOSITORY="https://github.com/pelicanmedia/Anthias.git"
 ANTHIAS_REPO_DIR="/home/${USER}/screenly"
-GITHUB_API_REPO_URL="https://api.github.com/repos/Screenly/Anthias"
-GITHUB_RELEASES_URL="https://github.com/Screenly/Anthias/releases"
-GITHUB_RAW_URL="https://raw.githubusercontent.com/Screenly/Anthias"
+GITHUB_API_REPO_URL="https://api.github.com/repos/pelicanmedia/Anthias"
+GITHUB_RELEASES_URL="https://github.com/pelicanmedia/Anthias/releases"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/pelicanmedia/Anthias"
 DOCKER_TAG="latest"
 UPGRADE_SCRIPT_PATH="${ANTHIAS_REPO_DIR}/bin/upgrade_containers.sh"
 ARCHITECTURE=$(uname -m)
@@ -180,7 +180,7 @@ function install_ansible() {
     fi
 
     # @TODO: Remove me later. Cryptography 38.0.3 won't build at the moment.
-    # See https://github.com/Screenly/Anthias/issues/1654 for details.
+    # See https://github.com/pelicanmedia/Anthias/issues/1654 for details.
     sudo ${SUDO_ARGS[@]} pip install cryptography==38.0.1
     sudo ${SUDO_ARGS[@]} pip install "$ANSIBLE_VERSION"
 }

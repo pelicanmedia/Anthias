@@ -44,7 +44,7 @@ export const Footer = () => {
               className="col-3 text-right justify-content-center align-self-center"
             >
               <a
-                href="https://github.com/Screenly/Anthias"
+                href="https://github.com/pelicanmedia/Anthias"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -52,7 +52,7 @@ export const Footer = () => {
                   alt="GitHub Repo stars"
                   src={(() => {
                     const url = new URL(
-                      'https://img.shields.io/github/stars/Screenly/Anthias',
+                      'https://img.shields.io/github/stars/pelicanmedia/Anthias',
                     );
                     const params = new URLSearchParams({
                       style: 'for-the-badge',

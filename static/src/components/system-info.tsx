@@ -6,7 +6,7 @@ import {
   UptimeInfo,
 } from '@/types';
 
-const ANTHIAS_REPO_URL = 'https://github.com/Screenly/Anthias';
+const ANTHIAS_REPO_URL = 'https://github.com/pelicanmedia/Anthias';
 
 const AnthiasVersionValue = ({ version }: AnthiasVersionValueProps) => {
   const [commitLink, setCommitLink] = useState('');

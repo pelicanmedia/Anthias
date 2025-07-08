@@ -14,7 +14,7 @@ QT_VERSION="$QT_MAJOR.$QT_MINOR.$QT_BUG_FIX"
 DEBIAN_VERSION=$(lsb_release -cs)
 MAKE_CORES="$(expr $(nproc) + 2)"
 
-ANTHIAS_RELEASE_URL="https://github.com/Screenly/Anthias/releases"
+ANTHIAS_RELEASE_URL="https://github.com/pelicanmedia/Anthias/releases"
 WEBVIEW_VERSION="0.3.5"
 
 mkdir -p "$BUILD_TARGET"

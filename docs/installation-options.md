@@ -39,11 +39,11 @@ Alternatively, you can [download our pre-built Balena disk images from the relea
 
 # Using the images from the releases
 
-You can find the latest release [here](https://github.com/Screenly/Anthias/releases/latest). From there, you can download the disk image that you need and flash it to your SD card.
+You can find the latest release [here](https://github.com/pelicanmedia/Anthias/releases/latest). From there, you can download the disk image that you need and flash it to your SD card.
 The image file looks something like `<yyyy>-<mm>-<dd>-raspberry<version>.zst`. Take note that the `.img` file is compressed in this `.zst` file.
 
 > [!NOTE]
-> We started to release the images in `.zst` format in [v0.20.0](https://github.com/Screenly/Anthias/releases/tag/v0.20.0) so that the images are smaller in size. Using `zip` with the `-9` flag won't make the each of the images smaller than 2 GB.
+> We started to release the images in `.zst` format in [v0.20.0](https://github.com/pelicanmedia/Anthias/releases/tag/v0.20.0) so that the images are smaller in size. Using `zip` with the `-9` flag won't make the each of the images smaller than 2 GB.
 >
 > At the moment, only the Raspberry Pi Imager&mdash;starting from version [v1.9.4](https://github.com/raspberrypi/rpi-imager/releases/tag/v1.9.4)&mdash;supports the `.zst` format.
 >
@@ -53,7 +53,7 @@ The image file looks something like `<yyyy>-<mm>-<dd>-raspberry<version>.zst`. T
 > zstd -d <yyyy>-<mm>-<dd>-raspberry<version>.zst
 > ```
 
-Starting with [v0.19.0](https://github.com/Screenly/Anthias/releases/tag/v0.19.0), devices installed using this option will be pinned to the version that you've downloaded. This means that the devices will still be in the same version even if a new release (e.g., v0.19.1, etc.) is available.
+Starting with [v0.19.0](https://github.com/pelicanmedia/Anthias/releases/tag/v0.19.0), devices installed using this option will be pinned to the version that you've downloaded. This means that the devices will still be in the same version even if a new release (e.g., v0.19.1, etc.) is available.
 
 # Installing on Raspberry Pi OS Lite or Debian
 
@@ -71,8 +71,8 @@ If you'd like more control over your digital signage instance, try installing it
 > * 32-bit Raspberry Pi OS is not supported on Pi 5
 > * If you experience any issues, please report them either:
 >   * On our [forums](https://forums.screenly.io)
->   * As a [GitHub issue](https://github.com/Screenly/Anthias/issues)
->   * In [GitHub Discussions](https://github.com/Screenly/Anthias/discussions)
+>   * As a [GitHub issue](https://github.com/pelicanmedia/Anthias/issues)
+>   * In [GitHub Discussions](https://github.com/pelicanmedia/Anthias/discussions)
 
 The TL;DR for on [Raspberry Pi OS](https://www.raspberrypi.com/software/) or Debian is:
 
@@ -118,7 +118,7 @@ You can choose between the following choices &mdash; `latest` and `tag`.
 
 Select this option if you want to install a pinned version of Anthias. You'll be prompted to enter
 a specific tag to install. You can find the tags in the
-[releases](https://github.com/Screenly/Anthias/releases) page.
+[releases](https://github.com/pelicanmedia/Anthias/releases) page.
 
 The script will check if the tag specified is valid and can be installed.
 If it's not, you need to run the script again and enter a valid tag.

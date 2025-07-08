@@ -150,4 +150,4 @@ If you're using a forked repository, you need to push the tag to the upstream re
 git push upstream WebView-vX.Y.Z
 ```
 
-Pushing this tag will trigger the [build-webview](https://github.com/Screenly/Anthias/actions/workflows/build-webview.yaml) workflow.
+Pushing this tag will trigger the [build-webview](https://github.com/pelicanmedia/Anthias/actions/workflows/build-webview.yaml) workflow.
