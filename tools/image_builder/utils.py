@@ -15,7 +15,7 @@ def get_build_parameters(build_target: str) -> dict:
     if build_target == 'pi5':
         return {
             'board': 'pi5',
-            'base_image': 'debian',
+            'base_image': 'balenalib/raspberrypi5-debian',
             'target_platform': 'linux/arm64/v8',
         }
     if build_target == 'pi4':
