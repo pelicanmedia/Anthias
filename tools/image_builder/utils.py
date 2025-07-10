@@ -101,8 +101,8 @@ def get_test_context() -> dict:
 def get_viewer_context(board: str) -> dict:
     releases_url = f'https://github.com/Screenly/Anthias/releases/download'
 
-    webview_git_hash = 'fb2cb9e'
-    webview_base_url = f'{releases_url}/WebView-v0.3.7'
+    webview_git_hash = 'b57d238'
+    webview_base_url = f'{releases_url}/WebView-v0.3.11'
 
     qt_version = '5.15.14'
 
