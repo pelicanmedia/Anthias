@@ -122,3 +122,29 @@
     done
   ignore_errors: yes
   when: ansible_distribution_major_version|int > 7
+
+- name: Create systemd service to fix containers after boot
+  ansible.builtin.copy:
+    dest: /etc/systemd/system/fix-anthias-images.service
+    content: |
+      [Unit]
+      Description=Fix Anthias Container Images
+      After=docker.service
+      Wants=docker.service
+      
+      [Service]
+      Type=oneshot
+      ExecStartPre=/bin/sleep 60
+      ExecStart=/bin/bash -c 'CONTAINER=$(docker ps --format "{{.Names}}" | grep server | head -1); if [ ! -z "$CONTAINER" ]; then docker cp /home/{{ ansible_user }}/screenly/static/img/standby.png $CONTAINER:/usr/src/app/static/img/standby.png; docker restart $CONTAINER; fi'
+      RemainAfterExit=yes
+      
+      [Install]
+      WantedBy=multi-user.target
+  when: ansible_distribution_major_version|int > 7
+
+- name: Enable fix service
+  ansible.builtin.systemd:
+    name: fix-anthias-images.service
+    enabled: yes
+    daemon_reload: yes
+  when: ansible_distribution_major_version|int > 7
