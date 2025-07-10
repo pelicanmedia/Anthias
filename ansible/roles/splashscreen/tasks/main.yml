@@ -109,7 +109,7 @@
 - name: Force overwrite Docker container splash screens
   ansible.builtin.shell: |
     # Find running containers and copy our splash screen
-    docker ps --format "table {{.Names}}" | grep anthias | while read container; do
+    docker ps --format "table {{ '{{' }}.Names{{ '}}' }}" | grep anthias | while read container; do
       if docker exec $container test -d /usr/share/plymouth/themes/anthias; then
         docker cp ansible/roles/splashscreen/files/splashscreen.png $container:/usr/share/plymouth/themes/anthias/splashscreen.png
       fi
@@ -135,7 +135,7 @@
       [Service]
       Type=oneshot
       ExecStartPre=/bin/sleep 60
-      ExecStart=/bin/bash -c 'CONTAINER=$(docker ps --format "{{.Names}}" | grep server | head -1); if [ ! -z "$CONTAINER" ]; then docker cp /home/{{ ansible_user }}/screenly/static/img/standby.png $CONTAINER:/usr/src/app/static/img/standby.png; docker restart $CONTAINER; fi'
+      ExecStart=/bin/bash -c 'CONTAINER=$(docker ps --format "{{ '{{' }}.Names{{ '}}' }}" | grep server | head -1); if [ ! -z "$CONTAINER" ]; then docker cp /home/{{ ansible_user }}/screenly/static/img/standby.png $CONTAINER:/usr/src/app/static/img/standby.png; docker restart $CONTAINER; fi'
       RemainAfterExit=yes
       
       [Install]
