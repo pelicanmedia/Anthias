@@ -38,7 +38,7 @@ export const App = () => {
         <Route path="/system-info" element={<SystemInfo />} />
       </Routes>
 
-      <div className="container mt-4">
+      {/* <div className="container mt-4">
         <div className="row">
           <div className="col-6 small text-white">
             <span>
@@ -55,7 +55,7 @@ export const App = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Footer />
     </>
