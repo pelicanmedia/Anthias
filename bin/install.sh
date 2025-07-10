@@ -240,20 +240,20 @@ function run_ansible_playbook() {
 function upgrade_docker_containers() {
     display_section "Build Docker Containers from Source"
 
-    wget -q \
-        "$GITHUB_RAW_URL/master/bin/upgrade_containers.sh" \
-        -O "$UPGRADE_SCRIPT_PATH"
+    # Change to the repository directory where the scripts exist
+    cd ${ANTHIAS_REPO_DIR}
 
     # Generate Dockerfiles first
     ENVIRONMENT=production \
         BUILD_TARGET="${DEVICE_TYPE}" \
         ./bin/generate_dev_mode_dockerfiles.sh
 
+    # Run upgrade_containers.sh in build mode
     sudo -u ${USER} \
         MODE=build \
         DOCKER_TAG="${DOCKER_TAG}" \
         GIT_BRANCH="${BRANCH}" \
-        "${UPGRADE_SCRIPT_PATH}"
+        ./bin/upgrade_containers.sh
 }
 
 function cleanup() {
