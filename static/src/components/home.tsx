@@ -133,7 +133,7 @@ export const ScheduleOverview = () => {
                 Schedule Overview
               </b>
               <div className="ml-auto">
-                <a
+                {/* <a
                   id="previous-asset-button"
                   className={classNames(
                     'btn',
@@ -160,7 +160,7 @@ export const ScheduleOverview = () => {
                 >
                   Next Asset
                   <i className="fas fa-chevron-right pl-2"></i>
-                </a>
+                </a> */}
                 <a
                   id="add-asset-button"
                   className={classNames(
