@@ -224,14 +224,33 @@ function run_ansible_playbook() {
         ansible-playbook site.yml "${ANSIBLE_PLAYBOOK_ARGS[@]}"
 }
 
+# function upgrade_docker_containers() {
+#     display_section "Initialize/Upgrade Docker Containers"
+
+#     wget -q \
+#         "$GITHUB_RAW_URL/master/bin/upgrade_containers.sh" \
+#         -O "$UPGRADE_SCRIPT_PATH"
+
+#     sudo -u ${USER} \
+#         DOCKER_TAG="${DOCKER_TAG}" \
+#         GIT_BRANCH="${BRANCH}" \
+#         "${UPGRADE_SCRIPT_PATH}"
+# }
+
 function upgrade_docker_containers() {
-    display_section "Initialize/Upgrade Docker Containers"
+    display_section "Build Docker Containers from Source"
 
     wget -q \
         "$GITHUB_RAW_URL/master/bin/upgrade_containers.sh" \
         -O "$UPGRADE_SCRIPT_PATH"
 
+    # Generate Dockerfiles first
+    ENVIRONMENT=production \
+        BUILD_TARGET="${DEVICE_TYPE}" \
+        ./bin/generate_dev_mode_dockerfiles.sh
+
     sudo -u ${USER} \
+        MODE=build \
         DOCKER_TAG="${DOCKER_TAG}" \
         GIT_BRANCH="${BRANCH}" \
         "${UPGRADE_SCRIPT_PATH}"
