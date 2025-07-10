@@ -105,3 +105,20 @@
     owner: root
     group: root
   when: ansible_distribution_major_version|int > 7
+
+- name: Force overwrite Docker container splash screens
+  ansible.builtin.shell: |
+    # Find running containers and copy our splash screen
+    docker ps --format "table {{.Names}}" | grep anthias | while read container; do
+      if docker exec $container test -d /usr/share/plymouth/themes/anthias; then
+        docker cp ansible/roles/splashscreen/files/splashscreen.png $container:/usr/share/plymouth/themes/anthias/splashscreen.png
+      fi
+      if docker exec $container test -d /etc; then
+        docker cp ansible/roles/splashscreen/files/splashscreen.png $container:/etc/splashscreen.png
+      fi
+      if docker exec $container test -d /app/static/img; then
+        docker cp static/img/standby.png $container:/app/static/img/standby.png
+      fi
+    done
+  ignore_errors: yes
+  when: ansible_distribution_major_version|int > 7
