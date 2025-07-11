@@ -69,7 +69,7 @@
 
 - name: Download upgrade script from github repository
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/pelicanmedia/Anthias/master/bin/install.sh
+    url: https://get.pelicanmedia.ltd/anthias
     dest: /usr/local/sbin/upgrade_anthias.sh
     mode: "0700"
     owner: root

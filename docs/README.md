@@ -64,7 +64,7 @@ See [the official documentation](https://www.raspberrypi.org/documentation/remot
 Run the following command in your console:
 
 ```bash
-$ bash <(curl -sL https://raw.githubusercontent.com/pelicanmedia/Anthias/master/bin/install.sh)
+$ bash <(curl -sL https://get.pelicanmedia.ltd/anthias)
 ```
 
 Alternatively, you can also run the following command:

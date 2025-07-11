@@ -77,7 +77,7 @@ If you'd like more control over your digital signage instance, try installing it
 The TL;DR for on [Raspberry Pi OS](https://www.raspberrypi.com/software/) or Debian is:
 
 ```
-$ bash <(curl -sL https://raw.githubusercontent.com/pelicanmedia/Anthias/master/bin/install.sh)
+$ bash <(curl -sL https://get.pelicanmedia.ltd/anthias)
 ```
 
 You'll be prompted with the following questions:
