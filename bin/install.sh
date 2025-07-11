@@ -244,7 +244,8 @@ function upgrade_docker_containers() {
     cd ${ANTHIAS_REPO_DIR}
 
     # Generate Dockerfiles first
-    ENVIRONMENT=production \
+    sudo -u ${USER} \
+        ENVIRONMENT=production \
         BUILD_TARGET="${DEVICE_TYPE}" \
         ./bin/generate_dev_mode_dockerfiles.sh
 
